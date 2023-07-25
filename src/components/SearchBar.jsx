@@ -1,8 +1,17 @@
-const SearchBar = ({onSearch}) => {
+import { useState } from "react";
+
+const SearchBar = ({ onSearch }) => {
+
+   const [id, setId] = useState('');
+   const handleChange = (event) => {
+      const valor = event.target.value;
+      setId(valor)
+   }
+
    return (
       <div>
-         <input type='search' />
-         <button onClick={onSearch}>buscar</button>
+         <input type='search' onChange={handleChange} />
+         <button onClick={onSearch}>agregar</button>
       </div>
    );
 }
